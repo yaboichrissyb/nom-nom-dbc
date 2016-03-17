@@ -16,8 +16,6 @@ gem 'activerecord'
 
 gem 'rake'
 gem 'bcrypt'
-gem 'shotgun'
-gem 'faker'
 
 group :test do
   gem 'shoulda-matchers'

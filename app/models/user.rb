@@ -1,19 +1,23 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  has_many  :comments, foreign_key: :commenter_id
+  has_many  :meals, foreign_key: :cook_id
+  has_many  :events, foreign_key: :creator_id
+
+  validates_presence_of   :name, :hashed_password, :email
+  validates_uniqueness_of :email
+
+
 include BCrypt
 
-  has_many :comments
-  has_many :commented_posts, through: :comments, source: :post
-  has_many :posts
-
   def password
-    @password ||= Password.new(password_hash)
+    @password ||= Password.new(hashed_password)
   end
 
   def password=(new_password)
     @password = Password.create(new_password)
-    self.password_hash = @password
+    self.hashed_password = @password
   end
 
   def authenticate(attempt)
