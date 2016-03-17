@@ -1,0 +1,25 @@
+<ol>
+<div id = "posts-container">
+
+   <%@posts.each do |post|%>
+    <div id = "post<%=post.id%>" class = "post-container">
+      <li>
+        <div class = "vote-button"><a href = "/posts/<%=post.id%>/vote" >^</a>
+        </div>
+        <div class = "post">
+        <div class = "post-title"><a href = "<%=post.url%>"><%=post.title%></a>
+        </div>
+        <div class = "post-info"><section class = "points"><%=post.votes%></section> points by <a href = "/users/<%=post.submitter.id%>"><%=post.submitter.username%></a> <%=post.age%><%if post.age != 1%> hours ago<%else%> hour ago<%end%> | <a href="/posts/<%=post.id%>"><%=post.comments.count%> comments</a> | <a href = "/posts/<%=post.id%>/delete" class = "delete">delete post</a></div>
+        </div>
+    </div>
+    <%end%>
+
+</div>
+ </ol>
+<div id = "post-form">
+  <form id="posts" method="post" action="/posts">
+    <input type="text" name="url" placeholder="www.url.org">
+    <input type="text" name="title" placeholder="title">
+    <input type="submit" value="submit new post">
+  </form>
+</div>

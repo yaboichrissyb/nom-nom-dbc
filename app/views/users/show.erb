@@ -1,0 +1,15 @@
+<h1><%=@user.username%>'s User Page</h1>
+<p>
+<h3>Posts:</h3>
+</p>
+<%@user.posts.each do |post|%>
+  <div id = "post<%=post.id%>" class = "post-container">
+    <div class = "vote-button"><a href = "/posts/<%=post.id%>/vote" >^</a></div>
+    <div class = "post">
+    <div class = "post-title"><a href = "<%=post.url%>"><%=post.title%></a>
+    </div>
+    <div class = "post-info"><%=post.votes%> points by <a href = "/users/<%=post.submitter.id%>"><%=post.submitter.username%></a> <%=post.age%><%if post.age != 1%> hours ago<%else%> hour ago<%end%> | <a href="/posts/<%=post.id%>"><%=post.comments.count%> comments</a></div>
+    </div>
+  </div>
+<%end%>
+
