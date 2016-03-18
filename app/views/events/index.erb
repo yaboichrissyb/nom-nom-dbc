@@ -7,8 +7,8 @@
     <%else%>
       <div class = "full-event-listing">
     <%end%>
-    <p>Event Name: <%= event.name %></p>
-    <p>Dates: <%= "#{event.start_month} #{event.start_day} to #{event.end_month} #{event.end_day}" %></p>
+    <p><%= event.name %></p>
+    <p> <%= "#{event.start_month} #{event.start_day} to #{event.end_month} #{event.end_day}" %></p>
     <p><%= "Nommers: #{event.participants.length} / #{event.max_people}" %></p>
     <p>Theme: <%= event.theme %></p>
     <%if event.participants.length >= event.max_people%>

@@ -1,10 +1,11 @@
 <div class="event-details">
   <h3>Event Name: <%= @event.name %></h3>
+  <h4>Event Theme: <%= @event.theme %></h4>
 
   <div class="meals">
     <ol>
     <% @event.meals.each do |meal| %>
-    <li><%=meal.cook.name%> is bringing <%= meal.name %> for <%=meal.day%><br>
+    <li><%=meal.cook.name%> is bringing <%= meal.name %> | Day: <%=meal.day%><br>
     Meal Description: <%=meal.description%></li>
     <%end%>
     </ol>
