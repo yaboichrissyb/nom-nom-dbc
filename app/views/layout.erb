@@ -15,19 +15,26 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <title></title>
 </head>
 <body>
-    <div id = "header"><a href = "/"><h3> Pintar News </h3></a>
-        <a href = "/sort/new">new</a> |
-      <a href = "/sort/popular">popular</a> |
-      <a href = "/sort/comments">comments</a> |
-      <%if logged_in?%>
-      <a href = "/users/<%=current_user.id%>"><%=current_user.name%></a> | <a href = "/users/logout">logout</a>
-      <%else%>
-      <a href = "/users/login">login</a> | <a href = "/users/new">register</a>
-      <%end%>
+
+
+    <div id = "header">
+      <div class = "name-and-motto">
+        <div class = "site-name"><a href = "/">nom nom dbc</a></div>
+        <div class = "motto">Cook. Share. Eat. Code.</div></div>
+        <center><div class = "logo"><img id ="logo" src="/img/logo.png"></div></center>
+
+      <div class="nav-container">
+        <%if logged_in?%>
+        <a href = "/users/<%=current_user.id%>"><%=current_user.name%></a> | <a href = "/users/logout">logout</a>
+        <%else%>
+        <a href = "/users/login">login</a> | <a href = "/users/new">register</a>
+        <%end%>
+      </div>
     </div>
     <div id = "main-container">
       <%= yield %>

@@ -1,7 +1,100 @@
 
+/*
+colors:
+#7DBF3C
+#91B46F
+#6CA534
+#C3F295
+#4B7224
+*/
+
+body {
+  counter-reset:section;
+  background-color: #F6F6EF;
+  font-family: Verdana;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.site-name{
+  display: inline-block;
+  font-size: 40px;
+}
+.motto{
+  display: inline-block;
+}
+.logo{
+  display: inline-block;
+}
+.name-and-motto{
+  display: inline-block;
+  border: 1px solid black;
+}
+#header h3{
+  display: inline;
+  font-size: 25px;
+}
+
+#header-img {
+  position: relative;
+}
+#logo{
+  margin-top: -20px;
+  width:200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 200px;
+}
+#header{
+  position: relative;
+  margin-top: 10px;
+  background-color: #7DBF3C;
+  padding: 5px;
+}
+#header a{
+  text-decoration: none;
+  color: black;
+}
+
+.nav-container {
+  position: absolute;
+  /*float: right;*/
+  right: 15px;
+  top: 15px;
+  display: inline-block;
+
+}
+
+.event-listing{
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 20px;
+  border: 2px solid #4B7224;
+}
+.event-listing:hover {
+  background-color: white;
+}
+.events-container{
+/*  padding-left: 5%;*/
+  /*border: 1px dashed black;*/
+  width: 75%;
+  margin: 0 auto;
+  font-family: Helvetica;
+}
+
+
+
+#main-container{
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  background-color: #F2EEEB;
+}
+
 .recipe-listing{
   position: relative;
-  display: block;
+  display: inline-block;
   padding: 10px;
   margin: 20px;
   width: 300px;

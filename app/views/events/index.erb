@@ -1,0 +1,12 @@
+<!-- Homepage/Event List -->
+<div class = "events-container">
+<% @events.each do |event| %>
+  <a href="/events/<%=event.id%>"><div class = "event-listing">
+    <p>Event Name: <%= event.name %></p>
+    <p><%= "#{event.start_date} - #{event.end_date}" %></p>
+    <p><%= "Number of Nommers: #{event.max_people}" %></p>
+    <p><%= event.theme %></p>
+  </div></a>
+<%end%>
+</div>
+  <p><a href="/events/new">Add Event</a></p>

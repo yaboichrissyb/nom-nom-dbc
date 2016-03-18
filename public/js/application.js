@@ -36,6 +36,11 @@ FullListing.prototype.returnHtml=function(){
   return html;
 }
 $(document).ready(function() {
+  //datepicker
+  $(function() {
+      $( ".datepicker" ).datepicker();
+    });
+
   $(".get-recipes").on("submit", function(event){
     event.preventDefault();
     var baseURL = "http://api.yummly.com/v1/api/recipes?_app_id=8bf48580&_app_key=8e399149c84faa2a335f632deecce2cb&";
