@@ -14,7 +14,7 @@ gem 'shotgun'
 
 gem 'activesupport'
 gem 'activerecord'
-
+gem 'faker'
 gem 'rake'
 gem 'bcrypt'
 gem 'shotgun'
@@ -28,5 +28,5 @@ end
 
 group :test, :development do
   gem 'factory_girl'
-  gem 'faker'
+
 end
