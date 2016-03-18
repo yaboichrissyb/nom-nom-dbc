@@ -19,6 +19,11 @@ post '/events' do
   end
 end
 
+get '/events/:id' do
+  @event = Event.find(params[:id])
+  erb :'/events/show'
+end
+
 get '/events/:id/edit' do
   @event = Event.find(params[:id])
   if current_user.id == @event.creator_id
@@ -61,8 +66,3 @@ post '/events/:id/comments' do
   end
 end
 
-get '/events/:id' do
-  @event = Event.find(params[:id])
-  erb :'/events/show'
-
-end
