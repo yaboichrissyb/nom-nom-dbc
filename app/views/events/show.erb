@@ -1,11 +1,13 @@
 
 <h3><%= @event.name %></h3>
 
+<a class="join-event-button" href="/events/<%= @event.id %>/users/new">Join Event</a>
+
 <div class="meals">
   <% @event.meals.each do |meal| %>
-  <%= meal.name %>
-  By <%=meal.cook.name%> for <%=meal.day%>
-  <%=meal.description%>
+    <%= meal.name %>
+    By <%=meal.cook.name%>
+    <%=meal.description%>
   <%end%>
 </div>
 
@@ -17,7 +19,7 @@
 
   <form for="new_comment" method="post" action="/events/<%=@event.id%>/comments">
     <!-- <textarea name="comment[body]" form="new_comment" placeholder="Enter commente here..."></textarea> -->
-    <input type="text" name="comment[body]" placeholder="Enter your comment here...">
+    <textarea="text" name="comment[body]" placeholder="Enter your comment here..."></textarea>
     <input type="submit" value="Add Comment">
   </form>
 

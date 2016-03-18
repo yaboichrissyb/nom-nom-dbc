@@ -1,0 +1,14 @@
+
+
+<h3>To join <%=@event.name.capitalize%> tell us what delicious meal you'll bring to share!</h3>
+<p>If you're not sure what you'll bring, just put not sure.  You can always change it later!</p>
+<form action="/events/<%=@event.id%>/users" method="post" >
+  <label>Meal Name</label>
+  <input type="text" name="name" placeholder="Grandma's Mac n Cheese">
+  <br>
+  <br>
+  <label>Description(optional)</label>
+  <textarea id="meal-description" class="big-text-field" name="description" cols="50" rows="3" placeholder="Creamy, cheesy and delicious just like Grandma used to make!"></textarea>
+  <br>
+  <input type="submit" value="MMMMmmmm!">
+</form>
