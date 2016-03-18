@@ -1,0 +1,28 @@
+<!-- New Event Page -->
+
+  <div class="error-messages">
+    <ul>
+      <% if @errors %>
+        <% @errors.each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <p class = "login-header">Create an event</p>
+    <form method="post" action="/events" class="login-form">
+      <label for="name">Name:</label>
+      <input type="text" name="event[name]"><br>
+      <label for="cuisine">Start Date:</label>
+      <input type="text" name="event[start_date]"><br>
+      <label for="address">End Date:</label>
+      <input type="text" name="event[end_date]"><br>
+      <label for="city">Max People:</label>
+      <input type="text" name="event[max_people]"><br>
+      <label for="state">Theme:</label>
+      <input type="text" name="event[theme]"><br>
+      <input type="submit" value="Add event">
+    </form>
+  <div>

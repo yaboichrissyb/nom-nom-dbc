@@ -1,3 +1,12 @@
+/*
+colors:
+#7DBF3C
+#91B46F
+#6CA534
+#C3F295
+#4B7224
+*/
+
 body {
   counter-reset:section;
   background-color: #F6F6EF;
@@ -5,57 +14,37 @@ body {
   max-width: 80%;
   margin: 0 auto;
 }
-.posts-container{
-  width: 90%;
-}
-.vote-button{
+.site-name{
   display: inline-block;
-  height: 50px;
-/*  background-color: gray;*/
+  font-size: 40px;
 }
-.points{
-  display:inline-block;
-}
-.vote-button a{
-  text-decoration: none;
-  color: black;
-}
-.post{
+.motto{
   display: inline-block;
-  height: 50px;
-/*  background-color: blue;*/
 }
-.post-title{
-/*  display: inline-block;*/
-  height: 30px;
+.logo{
+  display: inline-block;
 }
-
-.post-title a{
-  text-decoration: none;
-  color: black;
-}
-.post-info{
-/*  display: inline-block;*/
-  height: 15px;
-  font-size: 10px;
-  color: gray;
+.name-and-motto{
+  display: inline-block;
+  border: 1px solid black;
 }
 #header h3{
   display: inline;
-  font-size: 20px;
-}
-.post-info a{
-  text-decoration: none;
-  color: gray;
+  font-size: 25px;
 }
 
-.post-container{
-  margin: 5px;
+#header-img {
+  position: relative;
 }
-#post-form{
-
+#logo{
+  margin-top: -20px;
+  width:200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 200px;
 }
 #header{
+  position: relative;
   margin-top: 10px;
   background-color: #7DBF3C;
   padding: 5px;
@@ -65,57 +54,39 @@ body {
   color: black;
 }
 
-#posts{
-  margin: 0 auto;
-  padding-left: 200px;
-}
-
-.post-title{
-  font-size: 18px;
-}
-.post-comments{
-  margin: 0 auto;
-  width: 90%;
-
-}
-.comment-vote-button{
+.nav-container {
+  position: absolute;
+  /*float: right;*/
+  right: 15px;
+  top: 15px;
   display: inline-block;
-  height: 20px;
+
 }
 
-.comment-vote-button a{
-  text-decoration: none;
-  color: black;
-}
-
-.comment-info{
+.event-listing{
+  padding: 10px;
+  width: 200px;
+  height: 200px;
   display: inline-block;
-  color: #57543D;
+  margin: 20px;
+  border: 2px solid #4B7224;
 }
-
-.comment-info a{
-  text-decoration: none;
-  color: #57543D;
+.event-listing:hover {
+  background-color: white;
 }
-
-.comment-body{
-  width: 95%;
+.events-container{
+/*  padding-left: 5%;*/
+  /*border: 1px dashed black;*/
+  width: 75%;
   margin: 0 auto;
+  font-family: Helvetica;
 }
 
-.comment{
-  padding-top: 15px;
-  padding-bottom: 15px;
-  line-height: 1.5;
-}
 
-#comment-form{
-  padding-left:15px;
-}
 
 #main-container{
   padding: 10px;
   margin-top: 0px;
   margin-bottom: 40px;
-  background-color: #D9D6C1;
+  background-color: #F2EEEB;
 }
