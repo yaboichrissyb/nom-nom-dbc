@@ -1,3 +1,4 @@
+
 get '/events' do
   all_events = Event.order(:start_date)
   @events = all_events.map{|event| event if event.is_in_the_future?}.compact
@@ -45,4 +46,23 @@ delete '/events/:id' do
   else
     redirect '/'
   end
+end
+
+post '/events/:id/comments' do
+  # @comment = current_user.comments.build(params[:comment])
+  @comment = Comment.new(params[:comment])
+  @comment.commenter = current_user
+  @comment.event = Event.find(params[:id])
+  if @comment.save
+    @event = Event.find(@comment.event_id)
+    redirect "/events/#{@event.id}"
+  else
+    erb :'/events/show'
+  end
+end
+
+get '/events/:id' do
+  @event = Event.find(params[:id])
+  erb :'/events/show'
+
 end
