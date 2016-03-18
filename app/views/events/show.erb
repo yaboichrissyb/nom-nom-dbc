@@ -1,0 +1,33 @@
+
+<h3><%= @event.name %></h3>
+
+<div class="meals">
+  <% @event.meals.each do |meal| %>
+  <%= meal.name %>
+  By <%=meal.cook.name%> for <%=meal.day%>
+  <%=meal.description%>
+  <%end%>
+</div>
+
+<div class = "event_comments">
+  <%@event.comments.each do |comment|%>
+  <div class = "comment_info"><%=comment.commenter.name%> on <%=long_form_date(comment.created_at) %></div>
+  <div class = "comment_body"><%=comment.body%></div>
+  <%end%>
+
+  <form for="new_comment" method="post" action="/events/<%=@event.id%>/comments">
+    <!-- <textarea name="comment[body]" form="new_comment" placeholder="Enter commente here..."></textarea> -->
+    <input type="text" name="comment[body]" placeholder="Enter your comment here...">
+    <input type="submit" value="Add Comment">
+  </form>
+
+  <div class= "recipe_ideas">
+    <p>Not sure what nom nom to make? Enter ingredients below and get recipe ideas.</p>
+    <form class ="get-recipes" action="/api" method="get">
+      <input type="text" name="q" placeholder="What's in your fridge?">
+      <input type="submit" value="Get Recipes">
+    </form>
+  </div>
+  <div class="hidden-recipes">
+
+  </div>

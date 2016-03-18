@@ -19,13 +19,12 @@
   <title></title>
 </head>
 <body>
-
     <div id = "header"><a href = "/"><h3> Pintar News </h3></a>
         <a href = "/sort/new">new</a> |
       <a href = "/sort/popular">popular</a> |
       <a href = "/sort/comments">comments</a> |
       <%if logged_in?%>
-      <a href = "/users/<%=current_user.id%>"><%=current_user.username%></a> | <a href = "/users/logout">logout</a>
+      <a href = "/users/<%=current_user.id%>"><%=current_user.name%></a> | <a href = "/users/logout">logout</a>
       <%else%>
       <a href = "/users/login">login</a> | <a href = "/users/new">register</a>
       <%end%>
