@@ -1,8 +1,18 @@
 <h1>Register Here</h1>
+<div class="error-messages">
+    <ul>
+      <% if @errors %>
+        <% @errors.each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
 <div id = "register-form">
   <form id="register" method="post" action="/users">
-    <input type="text" name="user[name]" placeholder="name">
-    <input type="text" name="user[email]" placeholder="email">
+    <input type="text" name="user[name]" placeholder="name" value=<%= @user.name %>>
+    <input type="text" name="user[email]" placeholder="email" value=<%= @user.email %>>
     <input type="password" name="user[password]" placeholder="password">
     <input type="submit" value="Register">
   </form>

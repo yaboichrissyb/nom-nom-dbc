@@ -1,4 +1,14 @@
 <h1>Login Here</h1>
+<div class="error-messages">
+    <ul>
+      <% if @errors %>
+        <% @errors.each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
 <div id = "login-form">
   <form id="login" method="post" action="/users/login">
     <input type="text" name="email" placeholder="email">

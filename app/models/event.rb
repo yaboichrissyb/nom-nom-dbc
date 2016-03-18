@@ -5,6 +5,10 @@ class Event < ActiveRecord::Base
   has_many    :meals
   has_many :participants, through: :meals, source: :cook
 
+  validates_presence_of :name, :start_date, :end_date, :max_people
+  validates :max_people, numericality: { only_integer: true }
+
+
   def is_in_the_future?
     result = start_date <=> Date::today
     return true if result == 1
