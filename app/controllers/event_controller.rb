@@ -6,7 +6,12 @@ get '/events' do
 end
 
 get '/events/new' do
-  erb :"/events/new"
+  if current_user
+    erb :"/events/new"
+  else
+    @errors = ["You need to be logged in to add an event."]
+    erb :'/users/login'
+  end
 end
 
 post '/events' do
@@ -36,6 +41,7 @@ post '/events/:id/users' do
     erb :'/events/users/new'
   end
 end
+
 
 get '/events/:id' do
   @event = Event.find(params[:id])
@@ -73,15 +79,20 @@ delete '/events/:id' do
 end
 
 post '/events/:id/comments' do
-  # @comment = current_user.comments.build(params[:comment])
-  @comment = Comment.new(params[:comment])
-  @comment.commenter = current_user
-  @comment.event = Event.find(params[:id])
-  if @comment.save
-    @event = Event.find(@comment.event_id)
-    redirect "/events/#{@event.id}"
+  if logged_in?
+    # @comment = current_user.comments.build(params[:comment])
+    @comment = Comment.new(params[:comment])
+    @comment.commenter = current_user
+    @comment.event = Event.find(params[:id])
+    if @comment.save
+      @event = Event.find(@comment.event_id)
+      redirect "/events/#{@event.id}"
+    else
+      erb :'/events/show'
+    end
   else
-    erb :'/events/show'
+    @errors = ["You must be logged in to write a comment"]
+    erb :'/users/login'
   end
 end
 

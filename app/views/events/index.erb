@@ -9,4 +9,16 @@
   </div></a>
 <%end%>
 </div>
+
   <p><a href="/events/new">Add Event</a></p>
+
+
+<div class="error-messages">
+  <ul>
+    <% if @errors %>
+      <% @errors.each do |error| %>
+      <li><%= error %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
