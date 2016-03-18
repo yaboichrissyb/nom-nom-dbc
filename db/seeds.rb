@@ -13,5 +13,5 @@ end
 
 10.times do
   days = ["Mon", "Tues", "Weds", "Thurs", "Fri"]
-  Meal.create(cook_id: User.all.sample.id, event_id: Event.all.sample.id, description: Faker::Hipster.sentence,day: days.sample)
+  Meal.create(name: Faker::Hipster.word, cook_id: User.all.sample.id, event_id: Event.all.sample.id, description: Faker::Hipster.sentence,day: days.sample)
 end
