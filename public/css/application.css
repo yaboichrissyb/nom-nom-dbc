@@ -190,11 +190,24 @@ body {
   height: 50px;
   padding-top:17px;
 }
+.add-event-form:hover, .join-event-button:hover, .add-event-button:hover, .edit-button:hover, .delete-button:hover {
+  background-color: #3d6b10;
+}
 
 .add-event-button a {
   text-decoration: none;
   color: white;
   font-size: 25px;
+}
+.join-event-button{
+  background-color: #6CA534;
+  border-radius: 25px;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
 }
 
 .edit-button {
@@ -237,15 +250,22 @@ body {
   border-bottom: 1px solid black;
 }
 
+.meals li{
+  margin-top: 10px;
+}
+
 .comment_body {
   margin-bottom:20px;
   font-style: italic;
 }
-
+.italics{
+  font-style: italic;
+  font-size: 14px;
+}
 .comment_info {
   font-size: 12px;
 }
 
-span {
+.bold{
   font-weight: bold;
 }

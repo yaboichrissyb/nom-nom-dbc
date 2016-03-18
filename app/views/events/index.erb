@@ -7,10 +7,11 @@
     <%else%>
       <div class = "full-event-listing">
     <%end%>
-    <p><%= event.name %></p>
+    <p><span class = "bold"><%= event.name %></span></p>
+    <p><span class = "italics">Theme: <%= event.theme %></span></p>
     <p> <%= "#{event.start_month} #{event.start_day} to #{event.end_month} #{event.end_day}" %></p>
     <p><%= "Nommers: #{event.participants.length} / #{event.max_people}" %></p>
-    <p>Theme: <%= event.theme %></p>
+
     <%if event.participants.length >= event.max_people%>
       <div class = "full-alert">Event Full!</div>
     <%end%>

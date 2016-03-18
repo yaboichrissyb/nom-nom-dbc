@@ -14,7 +14,7 @@
     <form method="post" action="/events/<%=@event.id%>" class="login-form">
       <input type="hidden" name="_method" value ="put">
       <label for="name">Name:</label>
-      <input type="text" name="event[name]" value=<%=@event.name%>><br>
+      <input type="text" name="event[name]" value="<%=@event.name%>"><br>
       <label for="cuisine">Start Date:</label>
       <input type="date" name="event[start_date]" value=<%=@event.start_date%>><br>
       <label for="address">End Date:</label>
@@ -22,7 +22,7 @@
       <label for="city">Max People:</label>
       <input type="text" name="event[max_people]" value=<%=@event.max_people%>><br>
       <label for="state">Theme:</label>
-      <input type="text" name="event[theme]" value=<%=@event.theme%>><br>
+      <input type="text" name="event[theme]" value="<%=@event.theme%>"><br>
       <input type="submit" value="Edit your event">
     </form>
   <div>

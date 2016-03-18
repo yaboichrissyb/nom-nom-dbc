@@ -2,19 +2,19 @@
   <h3>Event Name: <%= @event.name %></h3>
   <h4>Event Theme: <%= @event.theme %></h4>
   <% if !@event.is_full? %>
-    <a class="join-event-button" href="/events/<%= @event.id %>/users/new">Join Event</a>
+    <center><a class="join-event-button" href="/events/<%= @event.id %>/users/new">Join Event</a></center>
   <%end%>
 
   <div class="meals">
     <ol>
     <% @event.meals.each do |meal| %>
     <li><%=meal.cook.name%> is bringing <%= meal.name %><br>
-    Meal Description: <%=meal.description%></li>
+    <span class = "italics"><%=meal.description%></span></li>
     <%end%>
     </ol>
   </div>
   <div class="comment-container">
-    <p><span>Comments:</span></p>
+    <p><span class = "bold">Comments:</span></p>
     <div class = "event_comments">
     <%@event.comments.each do |comment|%>
     <div class = "comment_info"><%=comment.commenter.name%> on <%=long_form_date(comment.created_at) %></div>
@@ -29,7 +29,7 @@
   </form>
 
   <div class= "recipe_ideas">
-    <p><span>Not sure what nom nom to make? Enter ingredients below and get recipe ideas.</span></p>
+    <p><span class = "bold">Not sure what nom nom to make? Enter ingredients below and get recipe ideas.</span></p>
     <form class ="get-recipes" action="/api" method="get">
       <input type="text" name="q" placeholder="What's in your fridge?">
       <input class='add-event-form' type="submit" value="Get Recipes">
