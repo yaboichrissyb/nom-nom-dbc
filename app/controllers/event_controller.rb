@@ -66,3 +66,8 @@ post '/events/:id/comments' do
   end
 end
 
+get '/events/:id/cooks' do
+  @event = Event.find(params[:id])
+  erb :'/events/id/cooks/new'
+end
+
