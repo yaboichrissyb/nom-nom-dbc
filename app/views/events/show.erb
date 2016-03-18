@@ -1,11 +1,14 @@
 <div class="event-details">
   <h3>Event Name: <%= @event.name %></h3>
   <h4>Event Theme: <%= @event.theme %></h4>
+  <% if !@event.is_full? %>
+    <a class="join-event-button" href="/events/<%= @event.id %>/users/new">Join Event</a>
+  <%end%>
 
   <div class="meals">
     <ol>
     <% @event.meals.each do |meal| %>
-    <li><%=meal.cook.name%> is bringing <%= meal.name %> | Day: <%=meal.day%><br>
+    <li><%=meal.cook.name%> is bringing <%= meal.name %><br>
     Meal Description: <%=meal.description%></li>
     <%end%>
     </ol>
@@ -18,7 +21,6 @@
     <div class = "comment_body"><%=comment.body%></div>
     <%end%>
   </div>
-
 
   <form for="new_comment" method="post" action="/events/<%=@event.id%>/comments">
     <!-- <textarea name="comment[body]" form="new_comment" placeholder="Enter commente here..."></textarea> -->

@@ -31,7 +31,7 @@ end
 
 post '/events/:id/users' do
   @event = Event.find(params[:id])
-  @meal = Meal.new(name: params[:name], description: params[:description])
+  @meal = Meal.new(name: params[:name], day: params[:day], description: params[:description])
   @meal.cook = current_user
   if @meal.save
     @event.meals << @meal
@@ -71,6 +71,11 @@ delete '/events/:id' do
   end
 end
 
+get '/events/:id/users/new' do
+  @event = Event.find(params[:id])
+  erb :'/events/users/new'
+end
+
 post '/events/:id/comments' do
   if logged_in?
     # @comment = current_user.comments.build(params[:comment])
@@ -89,10 +94,6 @@ post '/events/:id/comments' do
   end
 end
 
-get '/events/:id/cooks' do
-  @event = Event.find(params[:id])
-  erb :'/events/id/cooks/new'
-end
 
 get '/events/:id' do
   @event = Event.find(params[:id])

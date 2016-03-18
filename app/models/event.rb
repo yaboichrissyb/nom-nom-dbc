@@ -53,6 +53,10 @@ def end_day
     return Date._parse(end_date.to_s)[:mday]
   end
 
+  def is_full?
+    return true if self.participants.length == max_people
+  end
+
   def end_month
     date_hash = Date._parse(end_date.to_s)
     month = date_hash[:mon]
