@@ -1,12 +1,20 @@
 <!-- Homepage/Event List -->
 <div class = "events-container">
 <% @events.each do |event| %>
-  <a href="/events/<%=event.id%>"><div class = "event-listing">
-    <p>Event Name: <%= event.name %></p>
-    <p><%= "#{event.start_date} - #{event.end_date}" %></p>
-    <p><%= "Number of Nommers: #{event.max_people}" %></p>
-    <p><%= event.theme %></p>
+  <a href="/events/<%=event.id%>">
+    <%if event.participants.length < event.max_people%>
+      <div class = "open-event-listing">
+    <%else%>
+      <div class = "full-event-listing">
+    <%end%>
+    <p><%= event.name %></p>
+    <p> <%= "#{event.start_month} #{event.start_day} to #{event.end_month} #{event.end_day}" %></p>
+    <p><%= "Nommers: #{event.participants.length} / #{event.max_people}" %></p>
+    <p>Theme: <%= event.theme %></p>
+    <%if event.participants.length >= event.max_people%>
+      <div class = "full-alert">Event Full!</div>
+    <%end%>
   </div></a>
 <%end%>
 </div>
-  <p><a href="/events/new">Add Event</a></p>
+  <center><div><p class="add-event-button"><a href="/events/new">Add Event</a></p></div><center>

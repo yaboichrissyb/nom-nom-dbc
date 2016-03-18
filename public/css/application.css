@@ -26,12 +26,14 @@ body {
 .motto{
   display: inline-block;
 }
-.logo{
-  display: inline-block;
-}
+
 .name-and-motto{
   display: inline-block;
-  border: 1px solid black;
+  width:100%;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /*border: 1px solid black;*/
 }
 #header h3{
   display: inline;
@@ -42,7 +44,7 @@ body {
   position: relative;
 }
 #logo{
-  margin-top: -20px;
+  /*margin-top: 20px;*/
   width:200px;
   height: 200px;
   background-color: white;
@@ -67,6 +69,34 @@ body {
   display: inline-block;
 
 }
+
+.full-alert{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 20px;
+  font-style: italic;
+}
+.full-event-listing, .open-event-listing{
+  overflow: hidden;
+  color: black;
+  position: relative;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 20px;
+  border: 2px solid #4B7224;
+}
+.full-event-listing:hover {
+  background-color: #d64d4d;
+}
+
+.open-event-listing{
+  overflow: hidden;
+  color: black;
+  position: relative;
+}
 .error-messages li{
   color: red;
   list-style: none;
@@ -79,18 +109,34 @@ body {
   margin: 20px;
   border: 2px solid #4B7224;
 }
-.event-listing:hover {
-  background-color: white;
+.open-event-listing:hover {
+  background-color: #6CA534;
 }
 .events-container{
-/*  padding-left: 5%;*/
+  /*padding-left: 5%;*/
   /*border: 1px dashed black;*/
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
   font-family: Helvetica;
 }
 
+.nomnom, .dbc, .logo{
+  /*border: black 1px solid;*/
+  display: inline-block;
+  padding: 0;
+}
 
+.header-banner{
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 15px;
+  /*border: black 1px solid;*/
+}
+
+.nomnom{
+ margin: 0 auto;
+}
 
 #main-container{
   padding: 10px;
@@ -100,6 +146,7 @@ body {
 }
 
 .recipe-listing{
+  overflow: hidden;
   position: relative;
   display: inline-block;
   padding: 10px;
@@ -121,7 +168,10 @@ body {
   padding: 10px;
   width: 90%;
 }
-
+.motto{
+  font-size: 20px;
+  font-style: italic;
+}
 .recipe-name{
   position: absolute;
   top: 5px;
@@ -131,4 +181,71 @@ body {
 
 .recipe-link{
   width: 300px;
+}
+
+.add-event-button {
+  background-color: #6CA534;
+  border-radius: 25px;
+  width: 200px;
+  height: 50px;
+  padding-top:17px;
+}
+
+.add-event-button a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+.edit-button {
+  background-color: #6CA534;
+  border-radius: 25px;
+  width: 170px;
+  height: 25px;
+  display: inline-block;
+}
+
+.edit-button a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 45px;
+}
+
+.delete-button, .add-event-form {
+  background-color: #6CA534;
+  border-radius: 25px;
+  width: 170px;
+  height: 25px;
+  color: white;
+  border: none;
+  display: inline-block;
+}
+
+.login-form {
+  display: inline-block;
+}
+
+.event-details {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 20px;
+}
+
+.meals {
+  margin-bottom: 0px;
+  border-bottom: 1px solid black;
+}
+
+.comment_body {
+  margin-bottom:20px;
+  font-style: italic;
+}
+
+.comment_info {
+  font-size: 12px;
+}
+
+span {
+  font-weight: bold;
 }
