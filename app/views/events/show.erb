@@ -1,35 +1,48 @@
+<div class="event-details">
+  <h3>Event Name: <%= @event.name %></h3>
+  <h4>Event Theme: <%= @event.theme %></h4>
 
-<h3><%= @event.name %></h3>
+  <div class="meals">
+    <ol>
+    <% @event.meals.each do |meal| %>
+    <li><%=meal.cook.name%> is bringing <%= meal.name %> | Day: <%=meal.day%><br>
+    Meal Description: <%=meal.description%></li>
+    <%end%>
+    </ol>
+  </div>
+  <div class="comment-container">
+    <p><span>Comments:</span></p>
+    <div class = "event_comments">
+    <%@event.comments.each do |comment|%>
+    <div class = "comment_info"><%=comment.commenter.name%> on <%=long_form_date(comment.created_at) %></div>
+    <div class = "comment_body"><%=comment.body%></div>
+    <%end%>
+  </div>
 
-<a class="join-event-button" href="/events/<%= @event.id %>/users/new">Join Event</a>
-
-<div class="meals">
-  <% @event.meals.each do |meal| %>
-    <%= meal.name %>
-    By <%=meal.cook.name%>
-    <%=meal.description%>
-  <%end%>
-</div>
-
-<div class = "event_comments">
-  <%@event.comments.each do |comment|%>
-  <div class = "comment_info"><%=comment.commenter.name%> on <%=long_form_date(comment.created_at) %></div>
-  <div class = "comment_body"><%=comment.body%></div>
-  <%end%>
 
   <form for="new_comment" method="post" action="/events/<%=@event.id%>/comments">
     <!-- <textarea name="comment[body]" form="new_comment" placeholder="Enter commente here..."></textarea> -->
     <textarea name="comment[body]" placeholder="Enter your comment here..."></textarea>
-    <input type="submit" value="Add Comment">
+    <input class='add-event-form' type="submit" value="Add Comment">
   </form>
 
   <div class= "recipe_ideas">
-    <p>Not sure what nom nom to make? Enter ingredients below and get recipe ideas.</p>
+    <p><span>Not sure what nom nom to make? Enter ingredients below and get recipe ideas.</span></p>
     <form class ="get-recipes" action="/api" method="get">
       <input type="text" name="q" placeholder="What's in your fridge?">
-      <input type="submit" value="Get Recipes">
+      <input class='add-event-form' type="submit" value="Get Recipes">
     </form>
   </div>
-  <div class="hidden-recipes">
+  </div>
 
+  <div class="hidden-recipes">
+  <%if logged_in? && @event.creator_id == current_user.id%>
+    <div class="show-buttons">
+    <div class="edit-button"><a href="/events/<%=@event.id%>/edit">Edit event</a></div>
+    <div class="login-form"><form method="post" action="/events/<%=@event.id%>">
+      <input type="hidden" name="_method" value = "delete">
+      <input class="delete-button" type="submit" value="Delete event">
+    </form></div>
+    </div>
+  <%end%>
   </div>

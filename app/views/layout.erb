@@ -23,11 +23,14 @@
 
 
     <div id = "header">
+      <a href="/"><div class ="header-banner"><center>
+        <div class="nomnom"><img src="/img/nomnom.png"></div>
+        <div class = "logo"><img id ="logo" src="/img/logo.png"></div>
+        <div class="dbc"><img src="/img/dbc.png"></div></center>
+      </div></a>
       <div class = "name-and-motto">
-        <div class = "site-name"><a href = "/">nom nom dbc</a></div>
-        <div class = "motto">Cook. Share. Eat. Code.</div></div>
-        <center><div class = "logo"><img id ="logo" src="/img/logo.png"></div></center>
-
+        <div class = "motto">Cook. Share. Eat. Code.</div>
+      </div>
       <div class="nav-container">
         <%if logged_in?%>
         <a href = "/users/<%=current_user.id%>"><%=current_user.name%></a> | <a href = "/users/logout">logout</a>
