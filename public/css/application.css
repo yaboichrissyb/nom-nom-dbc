@@ -77,7 +77,7 @@ body {
   font-size: 20px;
   font-style: italic;
 }
-.full-event-listing{
+.full-event-listing, .open-event-listing{
   overflow: hidden;
   color: black;
   position: relative;
@@ -229,12 +229,11 @@ body {
 .event-details {
   margin-left: 100px;
   margin-right: 100px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .meals {
-  margin-bottom: 20px;
-  padding-bottom: 40px;
+  margin-bottom: 0px;
   border-bottom: 1px solid black;
 }
 
@@ -247,3 +246,6 @@ body {
   font-size: 12px;
 }
 
+span {
+  font-weight: bold;
+}

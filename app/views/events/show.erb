@@ -11,7 +11,7 @@
     </ol>
   </div>
   <div class="comment-container">
-    <p>Comments:</p>
+    <p><span>Comments:</span></p>
     <div class = "event_comments">
     <%@event.comments.each do |comment|%>
     <div class = "comment_info"><%=comment.commenter.name%> on <%=long_form_date(comment.created_at) %></div>
@@ -22,15 +22,15 @@
 
   <form for="new_comment" method="post" action="/events/<%=@event.id%>/comments">
     <!-- <textarea name="comment[body]" form="new_comment" placeholder="Enter commente here..."></textarea> -->
-    <textarea="text" name="comment[body]" placeholder="Enter your comment here..."></textarea>
-    <input type="submit" value="Add Comment">
+    <textarea name="comment[body]" placeholder="Enter your comment here..."></textarea>
+    <input class='add-event-form' type="submit" value="Add Comment">
   </form>
 
   <div class= "recipe_ideas">
-    <p>Not sure what nom nom to make? Enter ingredients below and get recipe ideas.</p>
+    <p><span>Not sure what nom nom to make? Enter ingredients below and get recipe ideas.</span></p>
     <form class ="get-recipes" action="/api" method="get">
       <input type="text" name="q" placeholder="What's in your fridge?">
-      <input type="submit" value="Get Recipes">
+      <input class='add-event-form' type="submit" value="Get Recipes">
     </form>
   </div>
   </div>

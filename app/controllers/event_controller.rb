@@ -37,11 +37,7 @@ post '/events/:id/users' do
   end
 end
 
-get '/events/:id' do
-  @event = Event.find(params[:id])
-  p @event.meals
-  erb :'/events/show'
-end
+
 
 get '/events/:id/edit' do
   @event = Event.find(params[:id])
@@ -73,12 +69,12 @@ delete '/events/:id' do
 end
 
 post '/events/:id/comments' do
+  @event = Event.find(params[:id])
   # @comment = current_user.comments.build(params[:comment])
   @comment = Comment.new(params[:comment])
   @comment.commenter = current_user
   @comment.event = Event.find(params[:id])
   if @comment.save
-    @event = Event.find(@comment.event_id)
     redirect "/events/#{@event.id}"
   else
     erb :'/events/show'
@@ -90,3 +86,8 @@ get '/events/:id/cooks' do
   erb :'/events/id/cooks/new'
 end
 
+get '/events/:id' do
+  @event = Event.find(params[:id])
+  p @event
+  erb :'/events/show'
+end
