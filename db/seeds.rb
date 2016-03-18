@@ -25,7 +25,9 @@ rand_date=Date.new(2016,rand(4..12), rand(1..28))
 Event.create(creator_id: 1, start_date: rand_date, end_date: rand_date + 7, max_people: 5, theme: "Horse Meat", name: "SeaBiscuit and Gravy")
 rand_date=Date.new(2016,rand(4..12), rand(1..28))
 Event.create(creator_id: 1, start_date: rand_date, end_date: rand_date + 7, max_people: 15, theme: "Soylent Green", name: "Feed us!!")
+
 day_array = ["not sure", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
 Meal.create(name: "Pork Noodle Chili", cook_id: 1, event_id: 1, day: day_array.sample, description: "This chili is traditionally really spicy but I'll keep it edible for you soft-mouthed types. Definitely my favorite chili of all time!")
 Meal.create(name: "Ten Bean Chili", cook_id: 2, event_id: 1, day: day_array.sample, description: "Step aside three-bean chili! This chili will have you makin stink music all night long. Plus its tasty.")
 Meal.create(name: "Generic Chili", cook_id: 3, event_id: 1, day: day_array.sample, description: "There's really nothing special about this chili. Its got ground beef and beans with a tomato base.")
@@ -49,6 +51,7 @@ Meal.create(name: "Mom's Spaghetti", cook_id: 8, event_id: 5, day: day_array.sam
 Meal.create(name: "Chocolate Chip Cookies", cook_id: 3, event_id: 7, day: day_array.sample, description: "I make them super soft and gooey! Every cookie has like 2 tablespoons of shortening in it. Disgusting, but you can't argue with results.")
 Meal.create(name: "Banana Loaf", cook_id: 7, event_id: 7, day: day_array.sample, description: "Simple banana bread. But I don't put any walnuts in because walnuts are gross.")
 Meal.create(name: "Cherry Pie", cook_id: 10, event_id: 7, day: day_array.sample, description: "This pie will make you do a backflip its so damn delicious. Just don't land on the pie.")
+
 # end
 
 # 10.times do
