@@ -44,7 +44,7 @@ $(document).ready(function() {
   $(".get-recipes").on("submit", function(event){
     event.preventDefault();
     $(".hidden-recipes").children().remove();
-    var baseURL = "http://api.yummly.com/v1/api/recipes?_app_id=8bf48580&_app_key=8e399149c84faa2a335f632deecce2cb&";
+    var baseURL = "http://api.yummly.com/v1/api/recipes?_app_id=8bf48580&_app_key=***************************";
     var data = $(this).serialize();
     var url = baseURL + data;
     // $(".hidden-recipes").toggle();
@@ -82,7 +82,7 @@ $(document).ready(function() {
   $(".hidden-recipes").on("click", ".recipe-link", function(event){
     event.preventDefault();
     var recipeId = $(this).attr("href");
-    var url = "http://api.yummly.com/v1/api/recipe/"+recipeId+"?_app_id=8bf48580&_app_key=8e399149c84faa2a335f632deecce2cb";
+    var url = "http://api.yummly.com/v1/api/recipe/"+recipeId+"?_app_id=8bf48580&_app_key=*************************";
     var ajaxRequest = $.ajax({
       method: "GET",
       url: url
