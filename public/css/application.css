@@ -65,7 +65,7 @@ body {
   position: absolute;
   /*float: right;*/
   right: 15px;
-  top: 15px;
+  top: 5px;
   display: inline-block;
 
 }
@@ -113,7 +113,7 @@ body {
   background-color: #6CA534;
 }
 .events-container{
-  /*padding-left: 5%;*/
+  /*padding-left: 10%;*/
   /*border: 1px dashed black;*/
   width: 90%;
   margin: 0 auto;
@@ -124,6 +124,7 @@ body {
   /*border: black 1px solid;*/
   display: inline-block;
   padding: 0;
+  margin-top: 20px;
 }
 
 .header-banner{
